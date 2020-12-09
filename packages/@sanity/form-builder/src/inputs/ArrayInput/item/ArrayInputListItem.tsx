@@ -2,6 +2,7 @@ import {ChangeIndicatorScope} from '@sanity/base/lib/change-indicators'
 import {ContextProvidedChangeIndicator} from '@sanity/base/lib/change-indicators/ChangeIndicator'
 import {ArraySchemaType, isValidationMarker, Marker, Path, SchemaType} from '@sanity/types'
 import * as PathUtils from '@sanity/util/paths'
+import LinkIcon from 'part:@sanity/base/link-icon'
 import {FieldPresence, FormFieldPresence, PresenceOverlay} from '@sanity/base/presence'
 import IntentButton from 'part:@sanity/components/buttons/intent'
 import EditItemFold from 'part:@sanity/components/edititem/fold'
@@ -308,7 +309,7 @@ export class ArrayInputListItem extends React.PureComponent<ArrayInputListItemPr
                 {value._ref && (
                   <IntentButton
                     className={styles.linkToReference}
-                    icon={<Icon symbol="link" />}
+                    icon={LinkIcon}
                     intent="edit"
                     kind="simple"
                     padding="small"
