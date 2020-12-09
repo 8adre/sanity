@@ -2,14 +2,11 @@ import {ChangeIndicatorScope} from '@sanity/base/lib/change-indicators'
 import {ContextProvidedChangeIndicator} from '@sanity/base/lib/change-indicators/ChangeIndicator'
 import {ArraySchemaType, isValidationMarker, Marker, Path, SchemaType} from '@sanity/types'
 import * as PathUtils from '@sanity/util/paths'
-import LinkIcon from 'part:@sanity/base/link-icon'
 import {FieldPresence, FormFieldPresence, PresenceOverlay} from '@sanity/base/presence'
-import Button from 'part:@sanity/components/buttons/default'
 import IntentButton from 'part:@sanity/components/buttons/intent'
 import EditItemFold from 'part:@sanity/components/edititem/fold'
 import {createDragHandle} from 'part:@sanity/components/lists/sortable'
 import ValidationStatus from 'part:@sanity/components/validation/status'
-import DragHandleIcon from 'part:@sanity/base/drag-handle-icon'
 import React from 'react'
 import {FormBuilderInput} from '../../../FormBuilderInput'
 import PatchEvent from '../../../PatchEvent'
@@ -19,14 +16,14 @@ import ConfirmButton from '../ConfirmButton'
 import {ItemValue} from '../typedefs'
 import InvalidItem from '../InvalidItem'
 import {hasFocusInPath, isEmpty, pathSegmentFrom} from './helpers'
-import {Box, Dialog, Layer} from '@sanity/ui'
+import {Box, Dialog, Layer, Icon, Button} from '@sanity/ui'
 
 import styles from './ArrayInputListItem.css'
 import PopoverDialog from '../../../components/PopoverDialog'
 
 const DragHandle = createDragHandle(() => (
   <span className={styles.dragHandle}>
-    <Button aria-hidden="true" icon={DragHandleIcon} kind="simple" padding="small" tabIndex={-1} />
+    <Button aria-hidden="true" icon="drag-handle" mode="bleed" padding={2} tabIndex={-1} />
   </span>
 ))
 
@@ -311,7 +308,7 @@ export class ArrayInputListItem extends React.PureComponent<ArrayInputListItemPr
                 {value._ref && (
                   <IntentButton
                     className={styles.linkToReference}
-                    icon={LinkIcon}
+                    icon={<Icon symbol="link" />}
                     intent="edit"
                     kind="simple"
                     padding="small"
